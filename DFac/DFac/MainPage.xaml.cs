@@ -36,5 +36,9 @@ namespace DFac
         {
             this.Frame.Navigate(typeof(Building));
         }
+
+      
+
+        
     }
 }
