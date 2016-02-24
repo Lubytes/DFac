@@ -37,8 +37,15 @@ namespace DFac
             this.Frame.Navigate(typeof(Building));
         }
 
-      
+        private void Building_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            //make the building page an object
+            Building bpage = new Building();
+            //display the page???
+            
+            
 
-        
+
+        }
     }
 }

@@ -9,21 +9,36 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <Pivot Title="DFac">
-            
-            <PivotItem x:Name="Home" Header="Home">
-                <Grid/>
-            </PivotItem>
-            <PivotItem x:Name="Building" Header="The Goldberg">
-                <Grid/>
+        <!--Splitview prototype for navigating between pages-->
+        <SplitView x:Name="SplitView" OpenPaneLength="240" CompactPaneLength="120"  
+        DisplayMode="CompactOverlay" IsPaneOpen="False" PaneBackground="DarkSeaGreen" Content="{Binding}">
+            <SplitView.Pane>
+                <StackPanel x:Name="SplitViewPanePanel">
+                    <RadioButton x:Name="BackRadioButton"  Tag="&#xE112;" Background="Green" Content="Back" GroupName="Back"/>
+                    <RadioButton x:Name="HamburgerRadioButton"  Tag="&#xE700;" Content="Menu" GroupName="Hamburger"/>
+
+                    <RadioButton x:Name="HomeRadioButton"  Tag="&#xE80F;" Content="Home" GroupName="Navigation"/>
+                    <RadioButton x:Name="FriendsRadioButton"  Tag="&#xE125;" Content="Friends" GroupName="Navigation"/>
+                </StackPanel>
+            </SplitView.Pane>
+        </SplitView>
+
+
+
+        <Pivot Title="DFac" Margin="126,0,0,0">
+            <FlyoutBase.AttachedFlyout>
+                <MenuFlyout/>
+            </FlyoutBase.AttachedFlyout>
+
+            <PivotItem x:Name="Home" Header="Home"/>
+            <PivotItem x:Name="Building" Header="The Goldberg" Tapped="Building_Tapped">
+                <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="164,214,0,0" VerticalAlignment="Top"/>
             </PivotItem>
         </Pivot>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="615,176,0,0" VerticalAlignment="Top" Click="button_Click"/>
+        
+        
 
-
-
-        <Image x:Name="image" HorizontalAlignment="Left" Height="139" Margin="66,64,0,0" VerticalAlignment="Top" Width="228"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="522,128,0,0" VerticalAlignment="Top" Click="button_Click"/>
-       
 
 
 
