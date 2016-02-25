@@ -43,9 +43,47 @@ namespace DFac
             Building bpage = new Building();
             //display the page???
             
-            
-
-
         }
+
+        private void BackRadioButton_Click(object sender, RoutedEventArgs e)
+        {
+            var frame = this.DataContext as Frame;
+            if (frame?.CanGoBack == true)
+            {
+                frame.GoBack();
+            }
+        }
+
+        private void HamburgerRadioButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!this.SplitView.IsPaneOpen)
+            {
+                this.SplitView.IsPaneOpen = true;
+            }
+        }
+
+        private void HomeRadioButton_Click(object sender, RoutedEventArgs e)
+        {
+            var frame = this.DataContext as Frame;
+            Page page = frame?.Content as Page;
+            if (page?.GetType() != typeof(Building))
+            {
+                this.Frame.Navigate(typeof(Building));
+            }
+        }
+
+        private void FriendsRadioButton_Click(object sender, RoutedEventArgs e)
+        {
+            var frame = this.DataContext as Frame;
+            Page page = frame?.Content as Page;
+            if (page?.GetType() != typeof(Building))
+            {
+                this.Frame.Navigate(typeof(Building));
+            }
+        }
+
+
+
+
     }
 }
