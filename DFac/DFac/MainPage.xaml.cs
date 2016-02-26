@@ -45,6 +45,7 @@ namespace DFac
             
         }
 
+        /*
         private void BackRadioButton_Click(object sender, RoutedEventArgs e)
         {
             var frame = this.DataContext as Frame;
@@ -53,6 +54,8 @@ namespace DFac
                 frame.GoBack();
             }
         }
+        */
+
 
         private void HamburgerRadioButton_Click(object sender, RoutedEventArgs e)
         {
@@ -60,15 +63,19 @@ namespace DFac
             {
                 this.SplitView.IsPaneOpen = true;
             }
+            else
+            {
+                this.SplitView.IsPaneOpen = false;
+            }
         }
 
         private void HomeRadioButton_Click(object sender, RoutedEventArgs e)
         {
             var frame = this.DataContext as Frame;
             Page page = frame?.Content as Page;
-            if (page?.GetType() != typeof(Building))
+            if (page?.GetType() != typeof(MainPage))
             {
-                this.Frame.Navigate(typeof(Building));
+                this.Frame.Navigate(typeof(MainPage));
             }
         }
 
@@ -82,8 +89,14 @@ namespace DFac
             }
         }
 
+        private void InvolveRadioButton_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
 
+        private void AcademicsRadioButton_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }

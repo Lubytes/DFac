@@ -13,38 +13,43 @@
     
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+       
+
+
+
+       
+
+
         <!--Splitview prototype for navigating between pages-->
-        <SplitView x:Name="SplitView"  OpenPaneLength="240" CompactPaneLength="48"  
-        DisplayMode="CompactOverlay" IsPaneOpen="False" PaneBackground="DarkSeaGreen" Content="{Binding}">
+        <SplitView x:Name="SplitView" OpenPaneLength="240" CompactPaneLength="48"  
+        DisplayMode="CompactInline" IsPaneOpen="False" PaneBackground="DarkSeaGreen" >
             <SplitView.Pane>
                 <StackPanel x:Name="SplitViewPanePanel">
-                    <RadioButton x:Name="BackRadioButton" Click="BackRadioButton_Click"  Tag="&#xE112;" Background="Green" Content="Back" GroupName="Back"/>
-                    <RadioButton x:Name="HamburgerRadioButton" Click="HamburgerRadioButton_Click"  Tag="&#xE700;" Content="Menu" GroupName="Hamburger"/>
+                    <RadioButton x:Name="HamburgerRadioButton" Click="HamburgerRadioButton_Click" Style="{StaticResource NavRadioButtonStyle}" Tag="&#xE700;" GroupName="Hamburger"/>
 
-                    <RadioButton x:Name="HomeRadioButton" Click="HomeRadioButton_Click"  Tag="&#xE80F;" Content="Home" GroupName="Navigation"/>
-                    <RadioButton x:Name="FriendsRadioButton" Click="FriendsRadioButton_Click"  Tag="&#xE125;" Content="Friends" GroupName="Navigation"/>
+                    <RadioButton x:Name="HomeRadioButton" Click="HomeRadioButton_Click" Style="{StaticResource NavRadioButtonStyle}" Tag="&#xE80F;" Content="Home" GroupName="Navigation"/>
+                    <RadioButton x:Name="SearchRadioButton" Style="{StaticResource NavRadioButtonStyle}" Tag="&#xE11A;" Content="Search" GroupName="Navigation"/>
+                    <RadioButton x:Name="EventsRadioButton" Click="FriendsRadioButton_Click" Style="{StaticResource NavRadioButtonStyle}" Tag="&#xE163;" Content="Events" GroupName="Navigation"/>
+                    <RadioButton x:Name="InvolvementRadioButton" Style="{StaticResource NavRadioButtonStyle}" Tag="&#xE125;" Content="Involvement" GroupName="Navigation" Click="InvolveRadioButton_Click"/>
+                    <RadioButton x:Name="AcademicsRadioButton" Style="{StaticResource NavRadioButtonStyle}" Tag="&#xE7BE;" Content="Academics" GroupName="Navigation" Click="AcademicsRadioButton_Click" />
                 </StackPanel>
-            
             </SplitView.Pane>
-            
+            <SplitView.Content>
+                <Pivot Title="DFac" Margin="10,0,116,0">
+                    <FlyoutBase.AttachedFlyout>
+                        <MenuFlyout/>
+                    </FlyoutBase.AttachedFlyout>
+
+                    <PivotItem x:Name="Main" Header="Main">
+
+                    </PivotItem>
+                    <PivotItem x:Name="Goldberg" Header="Goldberg" Tapped="Building_Tapped">
+                        <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="164,214,0,0" VerticalAlignment="Top"/>
+                    </PivotItem>
+                </Pivot>
+                
+            </SplitView.Content>
         </SplitView>
-
-
-
-        <Pivot Title="DFac" Margin="126,0,0,0">
-            <FlyoutBase.AttachedFlyout>
-                <MenuFlyout/>
-            </FlyoutBase.AttachedFlyout>
-
-            <PivotItem x:Name="Home" Header="Home"/>
-            <PivotItem x:Name="Building" Header="The Goldberg" Tapped="Building_Tapped">
-                <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="164,214,0,0" VerticalAlignment="Top"/>
-            </PivotItem>
-        </Pivot>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="615,176,0,0" VerticalAlignment="Top" Click="button_Click"/>
-        
-        
-
 
 
 
