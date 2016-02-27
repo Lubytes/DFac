@@ -5,7 +5,6 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -14,38 +13,19 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace DFac
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class Events : Page
     {
-        public MainPage()
+        public Events()
         {
             this.InitializeComponent();
         }
-
-        private void pageTitle_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-     
-       
-
-        /*
-        private void BackRadioButton_Click(object sender, RoutedEventArgs e)
-        {
-            var frame = this.DataContext as Frame;
-            if (frame?.CanGoBack == true)
-            {
-                frame.GoBack();
-            }
-        }
-        */
 
 
         private void HamburgerRadioButton_Click(object sender, RoutedEventArgs e)
@@ -70,7 +50,7 @@ namespace DFac
             }
         }
 
-       
+
 
         private void InvolveRadioButton_Click(object sender, RoutedEventArgs e)
         {
@@ -91,5 +71,9 @@ namespace DFac
                 this.Frame.Navigate(typeof(Events));
             }
         }
+
+
+
+
     }
 }

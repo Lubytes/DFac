@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="DFac.MainPage"
+    x:Class="DFac.Events"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:DFac"
@@ -7,18 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    
-    
-    
-    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-       
-
-
-
-       
-
 
         <!--Splitview prototype for navigating between pages-->
         <SplitView x:Name="SplitView" OpenPaneLength="240" CompactPaneLength="48"  
@@ -40,41 +29,25 @@
                         <MenuFlyout/>
                     </FlyoutBase.AttachedFlyout>
 
-                    <PivotItem x:Name="Main" Header="Main">
-                        <FlipView x:Name="flipView1" Width="480" Height="270" 
-                            BorderBrush="Black" BorderThickness="1">
-                            <!--To move again, delete margin-->
-                            
-                            <FlipView.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid>
-                                        <Image Width="480" Height="270" Source="{Binding Image}" Stretch="UniformToFill"/>
-                                        <Border Background="#A5000000" Height="80" VerticalAlignment="Bottom">
-                                            <TextBlock Text="{Binding Name}" FontFamily="Segoe UI" FontSize="26.667" 
-                                       Foreground="#CCFFFFFF" Padding="15,20"/>
-                                        </Border>
-                                    </Grid>
-                                </DataTemplate>
-                            </FlipView.ItemTemplate>
-                        </FlipView>
+                    <PivotItem x:Name="Calendar" Header="Calendar">
+                        
 
                     </PivotItem>
-                    <PivotItem x:Name="Goldberg" Header="Goldberg" >
+                    <PivotItem x:Name="News" Header="News" >
                         <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="164,214,0,0" VerticalAlignment="Top"/>
                     </PivotItem>
+                    <PivotItem x:Name="Pictures" Header="Pictures">
+
+
+                    </PivotItem>
+
+
                 </Pivot>
-                
+
             </SplitView.Content>
         </SplitView>
 
 
 
-
-
-
     </Grid>
-    
-    
 </Page>
-
-    
