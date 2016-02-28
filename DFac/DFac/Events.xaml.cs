@@ -72,8 +72,9 @@ namespace DFac
             }
         }
 
-
-
-
+        private void ExitPointer(object sender, PointerRoutedEventArgs e)
+        {
+            this.SplitView.IsPaneOpen = false;
+        }
     }
 }
