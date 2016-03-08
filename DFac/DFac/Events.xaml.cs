@@ -26,55 +26,5 @@ namespace DFac
         {
             this.InitializeComponent();
         }
-
-
-        private void HamburgerRadioButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (!this.SplitView.IsPaneOpen)
-            {
-                this.SplitView.IsPaneOpen = true;
-            }
-            else
-            {
-                this.SplitView.IsPaneOpen = false;
-            }
-        }
-
-        private void HomeRadioButton_Click(object sender, RoutedEventArgs e)
-        {
-            var frame = this.DataContext as Frame;
-            Page page = frame?.Content as Page;
-            if (page?.GetType() != typeof(MainPage))
-            {
-                this.Frame.Navigate(typeof(MainPage));
-            }
-        }
-
-
-
-        private void InvolveRadioButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void AcademicsRadioButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void EventsRadioButton_Click(object sender, RoutedEventArgs e)
-        {
-            var frame = this.DataContext as Frame;
-            Page page = frame?.Content as Page;
-            if (page?.GetType() != typeof(Events))
-            {
-                this.Frame.Navigate(typeof(Events));
-            }
-        }
-
-        private void ExitPointer(object sender, PointerRoutedEventArgs e)
-        {
-            this.SplitView.IsPaneOpen = false;
-        }
     }
 }
