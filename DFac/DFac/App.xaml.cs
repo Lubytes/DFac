@@ -22,6 +22,9 @@ namespace DFac
     /// </summary>
     sealed partial class App : Application
     {
+        private NavShell shell  = null;
+        private Frame rootFrame = null;
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -50,7 +53,12 @@ namespace DFac
             }
 #endif
 
-            Frame rootFrame = Window.Current.Content as Frame;
+            shell = Window.Current.Content as NavShell;
+
+            if(shell == null)
+            {
+                shell = new NavShell();
+            }
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
@@ -65,10 +73,11 @@ namespace DFac
                 {
                     //TODO: Load state from previously suspended application
                 }
-
-                // Place the frame in the current Window
-                Window.Current.Content = rootFrame;
             }
+
+            shell.DataContext = rootFrame;
+
+            Window.Current.Content = shell;
 
             if (rootFrame.Content == null)
             {
