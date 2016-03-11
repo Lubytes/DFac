@@ -71,9 +71,13 @@ namespace DFac
             }
         }
 
+        //This breaks the touch screen functionality
+        //Must find another way to close the navigation. Maybe when clicking on white space in other parts of the code.
+        /*
         private void ExitPointer(object sender, PointerRoutedEventArgs e)
         {
             this.SplitView.IsPaneOpen = false;
         }
+        */
     }
 }
